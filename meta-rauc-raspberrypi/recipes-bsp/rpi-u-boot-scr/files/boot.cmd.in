@@ -43,4 +43,5 @@ fi
 
 load ${BOOT_DEV} ${kernel_addr_r} boot/@@KERNEL_IMAGETYPE@@
 if test ! -e mmc 0:1 uboot.env; then saveenv; fi;
+load mmc 0:1 ${fdt_addr} boot/${fdtfile}
 @@KERNEL_BOOTCMD@@ ${kernel_addr_r} - ${fdt_addr}
